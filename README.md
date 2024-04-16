@@ -116,6 +116,21 @@ You can just provide your spec as space-separated combinations as above. Current
 
 ---
 
+**Pricing**
+
+Pricing is soley based on size:
+
+| Size | Price per million tokens |
+|------|-------------------------|
+| XL   | $1.20                   |
+| L    | $0.90                   |
+| M    | $0.60                   |
+| S    | $0.20                   |
+| XS   | $0.10                   |
+
+
+---
+
 **Examples**
 
 Chat
