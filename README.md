@@ -78,10 +78,10 @@ Where you would normally provide a model name in OpenAI, you provide a **spec** 
 
 Currently, you can specify tasks:
 
-- 'chat'
-- 'code'
-- 'summarization'
-- 'math'
+- chat
+- code
+- summarization
+- math
 
 And sizes:
 
@@ -91,15 +91,22 @@ And sizes:
 - S
 - XS
 
+And a (growing) list of *modifiers*:
+
+- safe
+
 For example,
 
 ```python
 response = client.chat.completions.create(
-    model="chat XS",
+    model="chat XS safe",
     messages=[{"role": "user", "content": "Tell me a joke about elephants"}],
     stream=False,
 )
 ```
+
+Here we see an extra-small chat model, with a built-in safety circuit breaker.
+
 
 You can just provide your spec as space-separated combinations as above. Currently, these are the models we use to serve these specs:
 
@@ -138,6 +145,16 @@ Chat
 ```python
 response = client.chat.completions.create(
     model="chat XS",
+    messages=[{"role": "user", "content": "Tell me a joke about squirrels"}],
+    stream=False,
+)
+```
+
+Safety (can be added to any task type)
+
+```python
+response = client.chat.completions.create(
+    model="chat XS safe",
     messages=[{"role": "user", "content": "Tell me a joke about squirrels"}],
     stream=False,
 )
