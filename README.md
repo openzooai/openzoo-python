@@ -83,13 +83,20 @@ Currently, you can specify tasks:
 - summarization
 - math
 
-And sizes:
+Sizes:
 
 - XL
 - L
 - M
 - S
 - XS
+
+Context-lengths:
+
+- XL-context (~64000 tokens)
+- L-context  (~32000 tokens)
+- M-context  (~16000 tokens)
+- S-context  (~8000 tokens)
 
 And a (growing) list of *modifiers*:
 
@@ -110,12 +117,18 @@ Here we see an extra-small chat model, with a built-in safety circuit breaker.
 
 You can just provide your spec as space-separated combinations as above. Currently, these are the models we use to serve these specs:
 
-|                | XL                         | L                                         | M                                       | S                                                     | XS                |
-|----------------|----------------------------|-------------------------------------------|-----------------------------------------|-------------------------------------------------------|-------------------|
-| **chat**       | databricks/dbrx-instruct   | meta-llama/Llama-2-70b-chat-hf            | mistralai/Mixtral-8x7B-Instruct-v0.1    | mistralai/Mistral-7B-Instruct-v0.2                    | google/gemma-2b-it|
-| **code**       | databricks/dbrx-instruct   | codellama/CodeLlama-70b-Instruct-hf       | codellama/CodeLlama-34b-Instruct-hf     | codellama/CodeLlama-7b-Instruct-hf                    |                   |
-| **summarization** | | |mistralai/Mixtral-8x7B-Instruct-v0.1 | meta-llama/Llama-2-7b-chat-hf                          | microsoft/phi-2   |
-| **math**       | databricks/dbrx-instruct   | meta-llama/Llama-2-70b-chat-hf            | mistralai/Mixtral-8x7B-Instruct-v0.1    | mistralai/Mistral-7B-Instruct-v0.2 | google/gemma-2b-it |                   
+| Category       | Chat                                  | Code                                   | Summarization                          | Math                                   |
+|----------------|---------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
+| XL             | databricks/dbrx-instruct, mistralai/Mixtral-8x22B-Instruct-v0.1 | databricks/dbrx-instruct               | mistralai/Mixtral-8x22B-Instruct-v0.1  | databricks/dbrx-instruct               |
+| L              | meta-llama/Llama-3-70b-chat-hf        | codellama/CodeLlama-70b-Instruct-hf    |                                        | meta-llama/Llama-3-70b-chat-hf         |
+| M              | mistralai/Mixtral-8x7B-Instruct-v0.1  | codellama/CodeLlama-34b-Instruct-hf    | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mixtral-8x7B-Instruct-v0.1   |
+| S              | meta-llama/Llama-2-7b-chat-hf, meta-llama/Llama-3-8b-chat-hf | codellama/CodeLlama-7b-Instruct-hf     | google/gemma-2b-it, microsoft/phi-2    | meta-llama/Llama-3-8b-chat-hf          |
+| XS             |                                       |                                        | google/gemma-2b-it, microsoft/phi-2    | google/gemma-2b-it                     |
+| XL-context     | mistralai/Mixtral-8x22B-Instruct-v0.1 |                                        | mistralai/Mixtral-8x22B-Instruct-v0.1 |                                        |
+| L-context      | databricks/dbrx-instruct              | databricks/dbrx-instruct               | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mistral-7B-Instruct-v0.2     |
+| M-context      |                                       | codellama/CodeLlama-34b-Instruct-hf    | codellama/CodeLlama-13b-Instruct-hf    | codellama/CodeLlama-7b-Instruct-hf     |
+| S-context      | meta-llama/Llama-3-70b-chat-hf, meta-llama/Llama-3-8b-chat-hf | code-llama/CodeLlama-7ob-Instruct-hf   | google/gemma-2b-it                     | meta-llama/Llama-3-70b-chat-hf         |
+                  
 
 **If you don't provide a size parameter, OpenZoo automatically defaults to 'S'**
 
@@ -140,7 +153,7 @@ Pricing is soley based on size:
 
 **Examples**
 
-Chat
+Chat (with an extra-small model)
 
 ```python
 response = client.chat.completions.create(
@@ -160,11 +173,11 @@ response = client.chat.completions.create(
 )
 ```
 
-Summarization
+Summarization (using an extra-large context model)
 
 ```python
 response = client.chat.completions.create(
-    model="summarization XS",
+    model="summarization XL-context",
     messages=[{"role": "user", "content": """
 Urban Lab - Centre for Science and Environment Analysis
 Report 1
@@ -196,7 +209,7 @@ Summarize the above text.
 )
 ```
 
-Math
+Math (With a strong XL model)
 
 ```python
 response = client.chat.completions.create(
