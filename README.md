@@ -117,17 +117,17 @@ Here we see an extra-small chat model, with a built-in safety circuit breaker.
 
 You can just provide your spec as space-separated combinations as above. Currently, these are the models we use to serve these specs:
 
-| Category       | Chat                                  | Code                                   | Summarization                          | Math                                   |
-|----------------|---------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
-| XL             | databricks/dbrx-instruct, mistralai/Mixtral-8x22B-Instruct-v0.1 | databricks/dbrx-instruct               | mistralai/Mixtral-8x22B-Instruct-v0.1  | databricks/dbrx-instruct               |
-| L              | meta-llama/Llama-3-70b-chat-hf        | codellama/CodeLlama-70b-Instruct-hf    |                                        | meta-llama/Llama-3-70b-chat-hf         |
-| M              | mistralai/Mixtral-8x7B-Instruct-v0.1  | codellama/CodeLlama-34b-Instruct-hf    | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mixtral-8x7B-Instruct-v0.1   |
-| S              | meta-llama/Llama-2-7b-chat-hf, meta-llama/Llama-3-8b-chat-hf | codellama/CodeLlama-7b-Instruct-hf     | google/gemma-2b-it, microsoft/phi-2    | meta-llama/Llama-3-8b-chat-hf          |
-| XS             |                                       |                                        | google/gemma-2b-it, microsoft/phi-2    | google/gemma-2b-it                     |
-| XL-context     | mistralai/Mixtral-8x22B-Instruct-v0.1 |                                        | mistralai/Mixtral-8x22B-Instruct-v0.1 |                                        |
-| L-context      | databricks/dbrx-instruct              | databricks/dbrx-instruct               | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mistral-7B-Instruct-v0.2     |
-| M-context      |                                       | codellama/CodeLlama-34b-Instruct-hf    | codellama/CodeLlama-13b-Instruct-hf    | codellama/CodeLlama-7b-Instruct-hf     |
-| S-context      | meta-llama/Llama-3-70b-chat-hf, meta-llama/Llama-3-8b-chat-hf | code-llama/CodeLlama-7ob-Instruct-hf   | google/gemma-2b-it                     | meta-llama/Llama-3-70b-chat-hf         |
+| Category       | Chat                                                            | Code                                   | Summarization                          | Math                                 |
+|----------------|-----------------------------------------------------------------|----------------------------------------|----------------------------------------|--------------------------------------|
+| XL             | databricks/dbrx-instruct, mistralai/Mixtral-8x22B-Instruct-v0.1 | databricks/dbrx-instruct               | mistralai/Mixtral-8x22B-Instruct-v0.1  | databricks/dbrx-instruct             |
+| L              | meta-llama/Llama-3-70b-chat-hf                                  | codellama/CodeLlama-70b-Instruct-hf    |                                        | meta-llama/Llama-3-70b-chat-hf       |
+| M              | mistralai/Mixtral-8x7B-Instruct-v0.1                            | codellama/CodeLlama-34b-Instruct-hf    | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mixtral-8x7B-Instruct-v0.1 |
+| S              | meta-llama/Llama-2-7b-chat-hf, meta-llama/Llama-3-8b-chat-hf    | codellama/CodeLlama-7b-Instruct-hf     | google/gemma-2b-it, microsoft/phi-2    | meta-llama/Llama-3-8b-chat-hf        |
+| XS             | google/gemma-2b-it, microsoft/phi-2                             |                                        | google/gemma-2b-it, microsoft/phi-2    | google/gemma-2b-it                   |
+| XL-context     | mistralai/Mixtral-8x22B-Instruct-v0.1                           |                                        | mistralai/Mixtral-8x22B-Instruct-v0.1  |                                      |
+| L-context      | databricks/dbrx-instruct, mistralai/Mixtral-8x7B-Instruct-v0.1  | databricks/dbrx-instruct               | mistralai/Mixtral-8x7B-Instruct-v0.1   | mistralai/Mistral-7B-Instruct-v0.2   |
+| M-context      |                                                                 | codellama/CodeLlama-34b-Instruct-hf, codellama/CodeLlama-13b-Instruct-hf, codellama/CodeLlama-7b-Instruct-hf|     |    |
+| S-context      | meta-llama/Llama-3-70b-chat-hf, meta-llama/Llama-3-8b-chat-hf   | code-llama/CodeLlama-7b-Instruct-hf    | google/gemma-2b-it                     | meta-llama/Llama-3-70b-chat-hf       |
                   
 
 **If you don't provide a size parameter, OpenZoo automatically defaults to 'S'**
