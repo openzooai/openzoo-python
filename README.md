@@ -70,6 +70,13 @@ for chunk in stream:
     content += chunk.choices[0].text
     print(chunk.choices[0].text, end="", flush=True)
 ```
+
+**Embeddings** - just specify the model as you would with OpenAI (embedding models listed below)
+
+```python
+client.embeddings.create(input = ["Some text that needs to be embedded"], model='togethercomputer/m2-bert-80M-8k-retrieval')
+```
+
 ---
 
 **The Spec**
@@ -133,6 +140,17 @@ You can just provide your spec as space-separated combinations as above. Current
 **If you don't provide a size parameter, OpenZoo automatically defaults to 'S'**
 
 *We release a feature every Friday, so expect this space to grow!*
+
+**Embedding models**
+
+- togethercomputer/m2-bert-80M-2k-retrieval
+- togethercomputer/m2-bert-80M-8k-retrieval
+- togethercomputer/m2-bert-80M-32k-retrieval
+- WhereIsAI/UAE-Large-V1
+- BAAI/bge-large-en-v1.5
+- BAAI/bge-base-en-v1.5
+- sentence-transformers/msmarco-bert-base-dot-v5
+- bert-base-uncased
 
 ---
 
