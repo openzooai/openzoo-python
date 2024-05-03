@@ -156,7 +156,7 @@ You can just provide your spec as space-separated combinations as above. Current
 
 **Pricing**
 
-Pricing is soley based on size:
+Pricing for inference is solely based on size:
 
 | Size | Price per million tokens |
 |------|-------------------------|
@@ -166,6 +166,18 @@ Pricing is soley based on size:
 | S    | $0.20                   |
 | XS   | $0.10                   |
 
+Embedding
+
+| Model                                          | Price per million tokens |
+|------------------------------------------------|--------------------------|
+|togethercomputer/m2-bert-80M-2k-retrieval       | $0.008                   |
+|togethercomputer/m2-bert-80M-8k-retrieval       | $0.008                   |
+|togethercomputer/m2-bert-80M-32k-retrieval      | $0.008                   |
+|WhereIsAI/UAE-Large-V1                          | $0.016                   |
+|BAAI/bge-large-en-v1.5                          | $0.016                   |
+|BAAI/bge-base-en-v1.5                           | $0.008                   |
+|sentence-transformers/msmarco-bert-base-dot-v5  | $0.008                   |
+|bert-base-uncased                               | $0.008                   |
 
 ---
 
