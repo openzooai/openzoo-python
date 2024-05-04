@@ -14,7 +14,13 @@ The OpenZoo API is the easiest way to use open-source LLMs because:
 
 *We are in closed alpha right now, watch this space!*
 
-**If you would like to be an alpha-tester, please get in touch: contactus@openzoo.ai**
+---
+
+# Getting Started
+
+1. **If you would like to be an alpha-tester, please get in touch: contactus@openzoo.ai** for an API key with $25 in your account.
+
+2. Once you have an API key, please click the 'Open in Colab' badge on any of the notebooks in this repository to get started on OpenZoo right away.
 
 ---
 
