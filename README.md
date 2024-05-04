@@ -22,7 +22,7 @@ The OpenZoo API is the easiest way to use open-source LLMs because:
 
 2. Once you have an API key, please click the 'Open in Colab' badge on any of the notebooks in this repository to get started on OpenZoo right away.
 
-3. We suggest you start with [demo.ipynb](https://github.com/openzooai/openzoo-python/blob/main/demo.ipynb)
+3. We suggest you start with [demo.ipynb](https://colab.research.google.com/github/openzooai/openzoo-python/blob/main/demo.ipynb) (opens directly in Colab)
 
 ---
 
